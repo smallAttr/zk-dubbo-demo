@@ -1,0 +1,15 @@
+## 避免和 server 工程端口冲突
+server:
+  port: 8801
+
+# Dubbo 服务消费者配置
+spring:
+  dubbo:
+    application:
+      name: consumer
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    scan: com.smallAttr.github.service.impl
+    module:
+      default: false
+

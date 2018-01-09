@@ -1,0 +1,14 @@
+spring:
+  dubbo:
+    application:
+      name: provider
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    protocol:
+      name: dubbo
+      port: 20880
+    scan: com.smallAttr.github.service
+    module:
+        default: false
+server:
+  port: 8800
