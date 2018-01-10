@@ -9,5 +9,10 @@ import com.smallAttr.github.domain.User;
  */
 public interface DubboService {
 
+    /**
+     * 根据用户昵称查找User对象
+     * @param nickName
+     * @return
+     */
     User findByNickName(String nickName);
 }
