@@ -1,5 +1,6 @@
 package com.smallAttr.github;
 
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,12 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Description:
  */
 @SpringBootApplication
+@EnableDubbo
 public class ProviderDubboLauncher {
 
     public static void main(String[] args) {
         SpringApplication.run(ProviderDubboLauncher.class,args);
     }
-
 
 
 }

@@ -1,14 +1,30 @@
-spring:
-  dubbo:
-    application:
-      name: provider
-    registry:
-      address: zookeeper://127.0.0.1:2181
-    protocol:
-      name: dubbo
-      port: 20880
-    scan: com.smallAttr.github.service
-    module:
-        default: false
+
+dubbo:
+  application:
+    name: provider
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    client: zkclient
+  protocol:
+    name: dubbo
+    port: 20880
+  scan: com.smallAttr.github.service
+
 server:
   port: 8800
+
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: qa
+
+---
+spring:
+  profiles: prod
+
+dubbo:
+  registry:
+    address: zookeeper://127.0.0.1:2182
