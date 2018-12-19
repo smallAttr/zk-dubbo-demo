@@ -3,6 +3,7 @@ package com.smallAttr.github;
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @Author: chenGang
@@ -14,7 +15,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ProviderDubboLauncher {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProviderDubboLauncher.class,args);
+        ConfigurableApplicationContext applicationContext = SpringApplication.run(ProviderDubboLauncher.class, args);
+        CoreConfiguration configuration = applicationContext.getBean(CoreConfiguration.class);
+        System.out.println("dubbo configuration:" + configuration);
     }
 
 
