@@ -12,3 +12,21 @@ spring:
         default: false
 server:
   port: 8800
+
+
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: qa
+
+
+---
+spring:
+  profiles: prod
+
+  dubbo:
+    registry:
+      address: zookeeper://127.0.0.1:2182
